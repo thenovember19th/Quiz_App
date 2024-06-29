@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -121,3 +122,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+MESSAGE_TAGS = {
+   
+    messages.INFO: 'bg-blue-500',
+    messages.SUCCESS: 'bg-blue-500',
+    messages.WARNING: 'bg-yellow-500',
+    messages.ERROR: 'bg-red-500',
+}
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

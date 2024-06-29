@@ -21,8 +21,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}
+                    <p class="absolute right-40">Welcome {{user}}</p>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-danger ml-2" href="{% url 'logout' %}">Logout</a>
+                            <a class="nav-link btn btn-outline-danger ml-2" href="{% url 'customlogout' %}">Logout</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
@@ -36,6 +37,22 @@
             </div>
         </div>
     </nav>
+
+    <!-- django alert messages -->
+    {% for message in messages %}
+    <div id="alertbox" class="h-12 w-screen {{message.tags}} flex items-center justify-center">
+        <div class="text-white text-center"> <span class="font-bold">Message</span>:{{message}} </div>
+        <button class="absolute right-4" onclick="closerAlert()"></button>
+      </div>
+      {% endfor %}
+    <script>
+        function closerAlert(){
+            let alert_message=document.getElementById('alertbox')
+            alert_message.classList.add('hidden')
+        }
+    </script>
+
+
     <div class="container my-5">
         {% block content %}{% endblock %}
     </div>

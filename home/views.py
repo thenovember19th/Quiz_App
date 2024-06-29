@@ -4,8 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 
 def home(request):
     return render(request, 'base.html')
@@ -68,12 +69,12 @@ def signUp(request):
         user.first_name=fname
         user.last_name=lname
         user.save()
-        subject = 'Welcome TO Quiz Website'
-        message = f'Hi {user.username}, thank you for registering in newsportal.'
+        # subject = 'Welcome TO Quiz Website'
+        # message = f'Hi {user.username}, thank you for registering in newsportal.'
         # email_from = settings.EMAIL_HOST_USER
         # recipient_list = [user.email, ]
         # send_mail( subject, message, email_from, recipient_list )
-        return redirect('login')
+        return redirect('customlogin')
    
        
     return render(request,'signup.html')
@@ -91,3 +92,9 @@ def custom_login(request):
         else:
             messages.error(request,'invalid password or username')
     return render(request,'login.html')
+
+
+def custom_logout(request):
+    logout(request)
+    messages.success(request, 'You have been logged out successfully.')
+    return render(request, 'logout.html')

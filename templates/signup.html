@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- <div class="w-screen h-screen flex justify-center items-center">
+
+    <div class="p-3 h-auto w-[400px] shadow-2xl bg-slate-200 flex justify-center items-center flex-col gap-3"> -->
+
+        <h1>SigUp Here</h1>
+      
+        <form  method="post" class="flex flex-col gap-3">
+          
+            <input type="text" class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg" placeholder="First Name" name="fname" required>
+            <input type="text" class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg" placeholder="Last Name" name="lname" required>
+            <input type="text"  class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg" placeholder="Username" name="username" required>
+            <input type="email"  class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg" placeholder="email" name="email" required>
+            <input type="password" class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg" placeholder="Password" name="pass1" required>
+            <input type="password" class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg"  placeholder="Confirm Password" name="pass2" required >
+            <button class="bg-blue-500 p-2 hover:bg-slate-600 hover:text-white">SignUp</button>
+        </form>
+        
+            
+        <!-- </div>
+    </div> -->
+
+
+
+
+
+{% endblock %}

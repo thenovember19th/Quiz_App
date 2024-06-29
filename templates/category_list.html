@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Categories</title>
-</head>
-<body>
-    <h1>Categories</h1>
-    <ul>
+{% extends 'base.html' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+<div class="mt-4">
+    <h1 class="mb-4">Categories</h1>
+    <div class="list-group">
         {% for category in categories %}
-            <li><a href="{% url 'quiz_list' category.id %}">{{ category.name }}</a></li>
+            <a href="{% url 'quiz_list' category.id %}" class="list-group-item list-group-item-action">{{ category.name }}</a>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </div>
+</div>
+{% endblock %}

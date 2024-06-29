@@ -2,30 +2,44 @@
 {% load static %}
 {% block content %}
 
-
-<!-- <div class="w-screen h-screen flex justify-center items-center">
-
-    <div class="p-3 h-auto w-[400px] shadow-2xl bg-slate-200 flex justify-center items-center flex-col gap-3"> -->
-
-        <h1>SigUp Here</h1>
-      
-        <form  method="post" class="flex flex-col gap-3">
-          
-            <input type="text" class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg" placeholder="First Name" name="fname" required>
-            <input type="text" class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg" placeholder="Last Name" name="lname" required>
-            <input type="text"  class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg" placeholder="Username" name="username" required>
-            <input type="email"  class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg" placeholder="email" name="email" required>
-            <input type="password" class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg" placeholder="Password" name="pass1" required>
-            <input type="password" class="text-xl w-full h-12 text-center  border-gray-600 rounded-lg"  placeholder="Confirm Password" name="pass2" required >
-            <button class="bg-blue-500 p-2 hover:bg-slate-600 hover:text-white">SignUp</button>
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="card shadow-lg p-4" style="max-width: 500px; width: 100%;">
+        <h1 class="text-primary text-center mb-4">Sign Up Here</h1>
+        <form method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            <div class="form-group mb-3">
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" placeholder="First Name" name="fname" required>
+                <div class="invalid-feedback">Please enter your first name.</div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" placeholder="Last Name" name="lname" required>
+                <div class="invalid-feedback">Please enter your last name.</div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+                <div class="invalid-feedback">Please enter a username.</div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="pass1">Password</label>
+                <input type="password" class="form-control" id="pass1" placeholder="Password" name="pass1" required>
+                <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="pass2">Confirm Password</label>
+                <input type="password" class="form-control" id="pass2" placeholder="Confirm Password" name="pass2" required>
+                <div class="invalid-feedback">Please confirm your password.</div>
+            </div>
+            <button class="btn btn-primary w-100" type="submit">Sign Up</button>
         </form>
-        
-            
-        <!-- </div>
-    </div> -->
-
-
-
-
+    </div>
+</div>
 
 {% endblock %}

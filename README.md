@@ -16,22 +16,6 @@ This is a Django-based quiz application that allows users to take quizzes catego
   
 - Responsive design with Bootstrap
 
-
-![Screenshot (31)](https://github.com/thenovember19th/Quiz_App/assets/97221801/ac08f4d8-69b2-4cc2-a2b0-002ee548a1ca)
-
-![Screenshot (32)](https://github.com/thenovember19th/Quiz_App/assets/97221801/053d06cd-7f45-4473-afdf-e45efe310c74)
-
-![Screenshot (33)](https://github.com/thenovember19th/Quiz_App/assets/97221801/d4a071e4-6e04-4edb-87a2-e08e6283a1fb)
-
-![Screenshot (34)](https://github.com/thenovember19th/Quiz_App/assets/97221801/253aad44-71de-4441-81ba-5fc83c961f45)
-
-
-
-
-
-
-
-
 ## Usage
 
 ### Admin Panel
